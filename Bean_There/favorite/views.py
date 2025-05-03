@@ -31,7 +31,7 @@ class FavoriteListCreateView(generics.ListCreateAPIView):
 class FavoriteDetailView(generics.DestroyAPIView):
     permission_classes = [permissions.AllowAny]  # Temporarily AllowAny for testing
     queryset = Favorite.objects.all()
-    lookup_field = 'pk'  # Changed from 'cafe_id' to 'pk' for simpler URLs
+    lookup_field = 'pk'  
     
     def get_object(self):
         obj = get_object_or_404(Favorite, pk=self.kwargs['pk'])
